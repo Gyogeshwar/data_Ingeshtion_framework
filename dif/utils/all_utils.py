@@ -34,7 +34,7 @@ class AllUtils:
         print(f"Error connecting to database: {err}")
         return None, None
 
-     def connect_to_azure_storage(connection_string):
+      def connect_to_azure_storage(connection_string):
     # Create a BlobServiceClient object
     blob_service_client = BlobServiceClient.from_connection_string(connection_string)
     print("Successfully connected to Azure Storage account.")
