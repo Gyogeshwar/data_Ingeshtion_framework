@@ -1,5 +1,6 @@
 from pyspark.sql.functions import *
 import mysql.connector
+from azure.storage.blob import BlobServiceClient
 
 class AllUtils:
 
@@ -32,3 +33,10 @@ class AllUtils:
     except mysql.connector.Error as err:
         print(f"Error connecting to database: {err}")
         return None, None
+
+     def connect_to_azure_storage(connection_string):
+    # Create a BlobServiceClient object
+    blob_service_client = BlobServiceClient.from_connection_string(connection_string)
+    print("Successfully connected to Azure Storage account.")
+    return blob_service_client
+
